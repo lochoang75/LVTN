@@ -271,24 +271,3 @@ Mat detectLane(Mat img) {
 	waitKey(0);
 	return imgThresholded;
 }
-
-void autoCheck() {
-	for (int idx = 7; idx <= 1000; idx++) {
-		string name = to_string(idx);		
-		string savepath = "C:/Users/15122/Documents/Visual Studio 2015/Projects/Default/Default/image/101c" + name + ".jpg";
-		Mat img;
-		cout << idx << endl;
-		img = imread(savepath);
-		detectLane(img);
-	}
-}
-
-int main(int argc, char** argv)
-{
-	/*
-	Mat img = imread("C:/Users/15122/Documents/Visual Studio 2015/Projects/Default/Default/image/101c300.jpg");
-	Mat imgThresholded = detectLane(img);
-	*/
-	autoCheck();
-	return 0;
-}
