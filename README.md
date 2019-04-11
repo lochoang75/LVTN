@@ -5,7 +5,7 @@
 3. Run: ` roslaunch team211 team211.launch` to launch ros package
 4. Run CDS 2018 simulator 
 ## Google drive folder 
-Link: https://drive.google.com/open?id=1JvJ-h9TVdwQssJfrebwz1lI_tdiAgkTT
+Link: [link](https://drive.google.com/open?id=1JvJ-h9TVdwQssJfrebwz1lI_tdiAgkTT)
 ### Include
 Source code for LVTN <br />
 1. opencv_root.tar.gz for intergrated opencv to ultra96 
@@ -15,5 +15,7 @@ To copy to SD card:` sudo dd if=opencv_root.tar.gz of=/dev/sdX` with /dev/sdX is
 ```bash
 cd linux
 chmod +x test.x86_64
-./test.x86_64```
+./test.x86_64
+```
+<br>
 * In team and ws type: team211 - ws://localhost:9090 <br>
