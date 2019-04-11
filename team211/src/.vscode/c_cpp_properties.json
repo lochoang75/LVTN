@@ -1,0 +1,18 @@
+{
+    "configurations": [
+        {
+            "name": "Linux",
+            "includePath": [
+                "/opt/ros/lunar/include",
+                "/home/fallinlove/catkin_ws/src/dytqet_node/include",
+                "/opt/ros/lunar/include/opencv-3.3.1-dev"
+            ],
+            "defines": [],
+            "compilerPath": "/usr/bin/clang",
+            "cStandard": "c11",
+            "cppStandard": "c++17",
+            "intelliSenseMode": "clang-x64"
+        }
+    ],
+    "version": 4
+}
