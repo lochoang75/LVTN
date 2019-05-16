@@ -18,3 +18,7 @@ chmod +x test.x86_64
 ./test.x86_64
 ```
 * In team and ws type: team211 - ws://localhost:9090 <br>
+### Performance Report
+1. Hardware.log time report of aplication run on ultra96 with FPGA
+2. Sofware.log time report of Aplication run on Ultra96 ARM
+3. ROS_report.log time report of Aplication run on PC in ROS.
