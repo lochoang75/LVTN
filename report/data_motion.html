@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    table, th, td
+    {
+      border-collapse:collapse;
+      border:1px solid black;
+    }
+    th, td
+    {
+      padding:5px;
+    }
+    p
+    {
+      font-size:200%
+    }
+  </style>
+  <title> Data Motion Network Report </title>
+</head>
+<body>
+<p>Partition 0</p>
+<table>
+<caption><b><font size="5">Data Motion Network</font></b></caption>
+<tr>
+<th>Accelerator</th>
+<th>Argument</th>
+<th>IP Port</th>
+<th>Direction</th>
+<th>Declared Size(bytes)</th>
+<th>Pragmas</th>
+<th>Connection</th>
+</tr>
+<tr>
+<td>xf::inRange&lt;0,320,480,1&gt;_1</td>
+<td>src</td>
+<td>src_allocatedFlag</td>
+<td>IN</td>
+<td>1</td>
+<td><ul>
+</ul>
+</td>
+<td>zynq_ultra_ps_e_0_M_AXI_HPM0_FPD:AXILITE:0xC</td>
+</tr>
+<td></td>
+<td></td>
+<td>src_rows</td>
+<td>IN</td>
+<td>4</td>
+<td><ul>
+</ul>
+</td>
+<td>zynq_ultra_ps_e_0_M_AXI_HPM0_FPD:AXILITE:0x10</td>
+</tr>
+<td></td>
+<td></td>
+<td>src_cols</td>
+<td>IN</td>
+<td>4</td>
+<td><ul>
+</ul>
+</td>
+<td>zynq_ultra_ps_e_0_M_AXI_HPM0_FPD:AXILITE:0x14</td>
+</tr>
+<td></td>
+<td></td>
+<td>src_size</td>
+<td>IN</td>
+<td>4</td>
+<td><ul>
+</ul>
+</td>
+<td>zynq_ultra_ps_e_0_M_AXI_HPM0_FPD:AXILITE:0x18</td>
+</tr>
+<td></td>
+<td></td>
+<td>src_data_V</td>
+<td>IN</td>
+<td>153600*1</td>
+<td><ul>
+<li>length:(src.size)</li>
+<li>mem_attribute:NON_CACHEABLE.PHYSICAL_CONTIGUOUS</li>
+</ul>
+</td>
+<td>zynq_ultra_ps_e_0_S_AXI_HP0_FPD:AXIDMA_SIMPLE</td>
+</tr>
+<td></td>
+<td>lower_thresh</td>
+<td>lower_thresh</td>
+<td>IN</td>
+<td>1</td>
+<td><ul>
+</ul>
+</td>
+<td>zynq_ultra_ps_e_0_M_AXI_HPM0_FPD:AXILITE:0x1C</td>
+</tr>
+<td></td>
+<td>upper_thresh</td>
+<td>upper_thresh</td>
+<td>IN</td>
+<td>1</td>
+<td><ul>
+</ul>
+</td>
+<td>zynq_ultra_ps_e_0_M_AXI_HPM0_FPD:AXILITE:0x20</td>
+</tr>
+<td></td>
+<td>dst</td>
+<td>dst_allocatedFlag</td>
+<td>IN</td>
+<td>1</td>
+<td><ul>
+</ul>
+</td>
+<td>zynq_ultra_ps_e_0_M_AXI_HPM0_FPD:AXILITE:0x24</td>
+</tr>
+<td></td>
+<td></td>
+<td>dst_rows</td>
+<td>IN</td>
+<td>4</td>
+<td><ul>
+</ul>
+</td>
+<td>zynq_ultra_ps_e_0_M_AXI_HPM0_FPD:AXILITE:0x28</td>
+</tr>
+<td></td>
+<td></td>
+<td>dst_cols</td>
+<td>IN</td>
+<td>4</td>
+<td><ul>
+</ul>
+</td>
+<td>zynq_ultra_ps_e_0_M_AXI_HPM0_FPD:AXILITE:0x2C</td>
+</tr>
+<td></td>
+<td></td>
+<td>dst_size</td>
+<td>IN</td>
+<td>4</td>
+<td><ul>
+</ul>
+</td>
+<td>zynq_ultra_ps_e_0_M_AXI_HPM0_FPD:AXILITE:0x30</td>
+</tr>
+<td></td>
+<td></td>
+<td>dst_data_V</td>
+<td>OUT</td>
+<td>153600*1</td>
+<td><ul>
+<li>length:(dst.size)</li>
+<li>mem_attribute:NON_CACHEABLE.PHYSICAL_CONTIGUOUS</li>
+</ul>
+</td>
+<td>zynq_ultra_ps_e_0_S_AXI_HP1_FPD:AXIDMA_SIMPLE</td>
+</tr>
+</table>
+
+<table>
+<caption><b><font size="5">Accelerator Callsites</font></b></caption>
+<tr>
+<th>Accelerator</th>
+<th>Callsite</th>
+<th>IP Port</th>
+<th>Transfer Size(bytes)</th>
+<th>Paged or Contiguous</th>
+<th>Datamover Setup Time(CPU cycles)</th>
+<th>Transfer Time(CPU cycles)</th>
+</tr>
+<tr>
+<td>xf::inRange&lt;0,320,480,1&gt;_1</td>
+<td>xf_inrange_accel.cpp:36:2</td>
+<td>src_allocatedFlag</td>
+<td>1</td>
+<td>paged</td>
+<td>0</td>
+<td>3</td>
+</tr>
+<td></td>
+<td></td>
+<td>src_rows</td>
+<td>4</td>
+<td>paged</td>
+<td>0</td>
+<td>13</td>
+</tr>
+<td></td>
+<td></td>
+<td>src_cols</td>
+<td>4</td>
+<td>paged</td>
+<td>0</td>
+<td>13</td>
+</tr>
+<td></td>
+<td></td>
+<td>src_size</td>
+<td>4</td>
+<td>paged</td>
+<td>0</td>
+<td>13</td>
+</tr>
+<td></td>
+<td></td>
+<td>src_data_V</td>
+<td>(src.size) * 1</td>
+<td>PHYSICAL_CONTIGUOUS</td>
+<td>595</td>
+<td>424337</td>
+</tr>
+<td></td>
+<td></td>
+<td>lower_thresh</td>
+<td>1</td>
+<td>paged</td>
+<td>0</td>
+<td>3</td>
+</tr>
+<td></td>
+<td></td>
+<td>upper_thresh</td>
+<td>1</td>
+<td>paged</td>
+<td>0</td>
+<td>3</td>
+</tr>
+<td></td>
+<td></td>
+<td>dst_allocatedFlag</td>
+<td>1</td>
+<td>paged</td>
+<td>0</td>
+<td>3</td>
+</tr>
+<td></td>
+<td></td>
+<td>dst_rows</td>
+<td>4</td>
+<td>paged</td>
+<td>0</td>
+<td>13</td>
+</tr>
+<td></td>
+<td></td>
+<td>dst_cols</td>
+<td>4</td>
+<td>paged</td>
+<td>0</td>
+<td>13</td>
+</tr>
+<td></td>
+<td></td>
+<td>dst_size</td>
+<td>4</td>
+<td>paged</td>
+<td>0</td>
+<td>13</td>
+</tr>
+<td></td>
+<td></td>
+<td>dst_data_V</td>
+<td>(dst.size) * 1</td>
+<td>PHYSICAL_CONTIGUOUS</td>
+<td>595</td>
+<td>424337</td>
+</tr>
+</table>
+</body>
+</html>
