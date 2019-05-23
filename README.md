@@ -22,3 +22,10 @@ chmod +x test.x86_64
 1. Hardware.log time report of aplication run on ultra96 with FPGA
 2. Sofware.log time report of Aplication run on Ultra96 ARM
 3. ROS_report.log time report of Aplication run on PC in ROS.
+4. sds.rpt System report of FPGA resource
+### Tutorial
+Xilinx tutorial for Ultra96
+### xfOpenCV_test
+Some performance test for xfOpenCV function
+1. Inrange
+2. Eroson

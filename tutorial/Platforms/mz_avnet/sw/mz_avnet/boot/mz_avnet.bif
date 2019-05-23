@@ -1,0 +1,7 @@
+/*mz_avnet*/
+the_ROM_image:
+{
+  [bootloader]<mz_avnet/boot/fsbl.elf>
+   <bitstream> 
+  <elf>
+}
