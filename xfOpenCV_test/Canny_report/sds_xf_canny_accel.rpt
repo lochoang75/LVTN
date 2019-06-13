@@ -1,0 +1,15 @@
+(c) Copyright 2012-2018 Xilinx, Inc. All Rights Reserved.
+#-----------------------------------------------------------
+# Tool version  : sds++ 2018.2 SW Build 2258646 on Thu Jun 14 20:03:40 MDT 2018
+# Start time    : Thu Jun 13 15:14:51 +07 2019
+# Command line  : sds++ -Wall -O0 -g -I../src -I/home/fallinlove/Downloads/zcu102-rv-ss-2018-2/petalinux/sdk/sysroots/aarch64-xilinx-linux/usr/include -I/home/fallinlove/workspace_2018/xfOpenCV/libs/xfopencv/include -c -fmessage-length=0 -MTsrc/xf_canny_accel.o -Wno-overloaded-virtual -Wno-unused-label -Wno-strict-overflow -Wno-uninitialized -Wno-unused-function -Wno-unused-variable -Wno-unknown-attributes -Wno-unused-local-typedefs -Wno-sign-compare -mstrict-align -hls-target 1 -MMD -MP -MFsrc/xf_canny_accel.d -MTsrc/xf_canny_accel.o -o src/xf_canny_accel.o ../src/xf_canny_accel.cpp -sds-hw xf::Canny<3,0,0,8,2160,3840,1,4,0> xf_canny_accel.cpp -files ../libs/xfopencv/include/imgproc/xf_canny.hpp -clkid 0 -sds-end -sds-hw xf::EdgeTracing<8,0,2160,3840,32,8,0> xf_canny_accel.cpp -files ../libs/xfopencv/include/imgproc/xf_edge_tracing.hpp -clkid 0 -sds-end -sds-sys-config a53_linux -sds-proc a53_linux -sds-pf /home/fallinlove/Downloads/u96v1_avnet
+# Log file      : /home/fallinlove/workspace_2018/xfOpenCV/Debug/_sds/reports/sds_xf_canny_accel.log
+# Journal file  : /home/fallinlove/workspace_2018/xfOpenCV/Debug/_sds/reports/sds_xf_canny_accel.jou
+# Report file   : /home/fallinlove/workspace_2018/xfOpenCV/Debug/_sds/reports/sds_xf_canny_accel.rpt
+#-----------------------------------------------------------
+
+High-Level Synthesis
+--------------------
+
+  Vivado HLS Report : file not found : /home/fallinlove/workspace_2018/xfOpenCV/Debug/_sds/vhls/w0_xf_Canny w1_xf_EdgeTracing/solution/syn/report/w0_xf_Canny w1_xf_EdgeTracing_csynth.rpt
+
