@@ -1,0 +1,147 @@
+(c) Copyright 2012-2018 Xilinx, Inc. All Rights Reserved.
+#-----------------------------------------------------------
+# Tool version  : sds++ 2018.2 SW Build 2258646 on Thu Jun 14 20:03:40 MDT 2018
+# Start time    : Fri Jun 14 08:28:17 +07 2019
+# Command line  : sds++ -Wall -O0 -g -I../src -I/home/fallinlove/Downloads/zcu102-rv-ss-2018-2/petalinux/sdk/sysroots/aarch64-xilinx-linux/usr/include -I/home/fallinlove/workspace_2018/xfOpenCV/libs/xfopencv/include -c -fmessage-length=0 -MTsrc/xf_resize_accel.o -Wno-overloaded-virtual -Wno-unused-label -Wno-strict-overflow -Wno-uninitialized -Wno-unused-function -Wno-unused-variable -Wno-unknown-attributes -Wno-unused-local-typedefs -Wno-sign-compare -mstrict-align -hls-target 1 -MMD -MP -MFsrc/xf_resize_accel.d -MTsrc/xf_resize_accel.o -o src/xf_resize_accel.o ../src/xf_resize_accel.cpp -sds-hw xf::resize<2,0,2160,3840,1080,1920,1,2> xf_resize_accel.cpp -files ../libs/xfopencv/include/imgproc/xf_resize.hpp -clkid 0 -sds-end -sds-sys-config a53_linux -sds-proc a53_linux -sds-pf /home/fallinlove/Downloads/u96v1_avnet
+# Log file      : /home/fallinlove/workspace_2018/xfOpenCV/Debug/_sds/reports/sds_xf_resize_accel.log
+# Journal file  : /home/fallinlove/workspace_2018/xfOpenCV/Debug/_sds/reports/sds_xf_resize_accel.jou
+# Report file   : /home/fallinlove/workspace_2018/xfOpenCV/Debug/_sds/reports/sds_xf_resize_accel.rpt
+#-----------------------------------------------------------
+
+High-Level Synthesis
+--------------------
+
+  Vivado HLS Report : /home/fallinlove/workspace_2018/xfOpenCV/Debug/_sds/vhls/w0_xf_resize/solution/syn/report/w0_xf_resize_csynth.rpt
+
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |  10.00|     6.436|        2.70|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+---------+-----+---------+---------+
+    |    Latency    |    Interval   | Pipeline|
+    | min |   max   | min |   max   |   Type  |
+    +-----+---------+-----+---------+---------+
+    |  135|  8396375|  135|  8396375|   none  |
+    +-----+---------+-----+---------+---------+
+
+    + Detail: 
+        * Instance: 
+        +------------------+--------+-----+---------+-----+---------+---------+
+        |                  |        |    Latency    |    Interval   | Pipeline|
+        |     Instance     | Module | min |   max   | min |   max   |   Type  |
+        +------------------+--------+-----+---------+-----+---------+---------+
+        |grp_resize_fu_72  |resize  |  134|  8396374|  134|  8396374|   none  |
+        +------------------+--------+-----+---------+-----+---------+---------+
+
+        * Loop: 
+        N/A
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+-------+--------+-------+-----+
+|       Name      | BRAM_18K| DSP48E|   FF   |  LUT  | URAM|
++-----------------+---------+-------+--------+-------+-----+
+|DSP              |        -|      -|       -|      -|    -|
+|Expression       |        -|      -|       -|      -|    -|
+|FIFO             |        -|      -|       -|      -|    -|
+|Instance         |       47|     48|    3985|  10621|    -|
+|Memory           |        -|      -|       -|      -|    -|
+|Multiplexer      |        -|      -|       -|     33|    -|
+|Register         |        -|      -|       3|      -|    -|
++-----------------+---------+-------+--------+-------+-----+
+|Total            |       47|     48|    3988|  10654|    0|
++-----------------+---------+-------+--------+-------+-----+
+|Available        |      432|    360|  141120|  70560|    0|
++-----------------+---------+-------+--------+-------+-----+
+|Utilization (%)  |       10|     13|       2|     15|    0|
++-----------------+---------+-------+--------+-------+-----+
+
++ Detail: 
+    * Instance: 
+    +------------------+--------+---------+-------+------+-------+
+    |     Instance     | Module | BRAM_18K| DSP48E|  FF  |  LUT  |
+    +------------------+--------+---------+-------+------+-------+
+    |grp_resize_fu_72  |resize  |       47|     48|  3985|  10621|
+    +------------------+--------+---------+-------+------+-------+
+    |Total             |        |       47|     48|  3985|  10621|
+    +------------------+--------+---------+-------+------+-------+
+
+    * DSP48: 
+    N/A
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    N/A
+
+    * Multiplexer: 
+    +--------------------+----+-----------+-----+-----------+
+    |        Name        | LUT| Input Size| Bits| Total Bits|
+    +--------------------+----+-----------+-----+-----------+
+    |ap_NS_fsm           |  15|          3|    1|          3|
+    |p_dst_data_V_write  |   9|          2|    1|          2|
+    |p_src_data_V_read   |   9|          2|    1|          2|
+    +--------------------+----+-----------+-----+-----------+
+    |Total               |  33|          7|    3|          7|
+    +--------------------+----+-----------+-----+-----------+
+
+    * Register: 
+    +-------------------------------+---+----+-----+-----------+
+    |              Name             | FF| LUT| Bits| Const Bits|
+    +-------------------------------+---+----+-----+-----------+
+    |ap_CS_fsm                      |  2|   0|    2|          0|
+    |grp_resize_fu_72_ap_start_reg  |  1|   0|    1|          0|
+    +-------------------------------+---+----+-----+-----------+
+    |Total                          |  3|   0|    3|          0|
+    +-------------------------------+---+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++----------------------+-----+-----+------------+---------------------+--------------+
+|       RTL Ports      | Dir | Bits|  Protocol  |    Source Object    |    C Type    |
++----------------------+-----+-----+------------+---------------------+--------------+
+|ap_clk                |  in |    1| ap_ctrl_hs |     w0_xf_resize    | return value |
+|ap_rst_n              |  in |    1| ap_ctrl_hs |     w0_xf_resize    | return value |
+|ap_start              |  in |    1| ap_ctrl_hs |     w0_xf_resize    | return value |
+|ap_done               | out |    1| ap_ctrl_hs |     w0_xf_resize    | return value |
+|ap_idle               | out |    1| ap_ctrl_hs |     w0_xf_resize    | return value |
+|ap_ready              | out |    1| ap_ctrl_hs |     w0_xf_resize    | return value |
+|p_src_allocatedFlag   |  in |    8|   ap_none  | p_src_allocatedFlag |    pointer   |
+|p_src_rows            |  in |   32|   ap_none  |      p_src_rows     |    pointer   |
+|p_src_cols            |  in |   32|   ap_none  |      p_src_cols     |    pointer   |
+|p_src_size            |  in |   32|   ap_none  |      p_src_size     |    pointer   |
+|p_src_data_V_dout     |  in |    8|   ap_fifo  |     p_src_data_V    |    pointer   |
+|p_src_data_V_empty_n  |  in |    1|   ap_fifo  |     p_src_data_V    |    pointer   |
+|p_src_data_V_read     | out |    1|   ap_fifo  |     p_src_data_V    |    pointer   |
+|p_dst_allocatedFlag   |  in |    8|   ap_none  | p_dst_allocatedFlag |    pointer   |
+|p_dst_rows            |  in |   32|   ap_none  |      p_dst_rows     |    pointer   |
+|p_dst_cols            |  in |   32|   ap_none  |      p_dst_cols     |    pointer   |
+|p_dst_size            |  in |   32|   ap_none  |      p_dst_size     |    pointer   |
+|p_dst_data_V_din      | out |    8|   ap_fifo  |     p_dst_data_V    |    pointer   |
+|p_dst_data_V_full_n   |  in |    1|   ap_fifo  |     p_dst_data_V    |    pointer   |
+|p_dst_data_V_write    | out |    1|   ap_fifo  |     p_dst_data_V    |    pointer   |
++----------------------+-----+-----+------------+---------------------+--------------+
+
