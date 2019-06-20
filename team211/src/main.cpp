@@ -153,16 +153,16 @@ void histogramCalculate(Mat src) {
 	imshow("Circle", src);
 }
 
-void findNearest_first_left(Point* list, int start, int &one, int &two) {	
+void findNearest_first_left(Point* list, int start, int &one, int &two) {
 	int j = 0;
-	for (int i = start+1; i < 16; i++) {
+	for (int i = start + 1; i < 16; i++) {
 		if (list[i].x != 0) {
 			if (j == 0) one = list[i].x;
 			else if (j == 1) two = list[i].x;
 			j++;
 		}
 		if (j == 2) break;
-	}	
+	}
 }
 
 void findNearest_first_right(Point* list, int start, int &one, int &two) {
@@ -179,7 +179,7 @@ void findNearest_first_right(Point* list, int start, int &one, int &two) {
 
 void findNearest_last_left(Point* list, int end, int &one, int &two) {
 	int j = 0;
-	for (int i = end-1; i >= 0; i--) {
+	for (int i = end - 1; i >= 0; i--) {
 		if (list[i].x != 0) {
 			if (j == 0) one = list[i].x;
 			else if (j == 1) two = list[i].x;
@@ -187,7 +187,7 @@ void findNearest_last_left(Point* list, int end, int &one, int &two) {
 		}
 		if (j == 2) break;
 	}
-} 
+}
 
 void findNearest_last_right(Point* list, int end, int &one, int &two) {
 	int j = 0;
@@ -244,7 +244,7 @@ void findNearest_middle_right(Point* list, int pos, int &one, int &two, int &cou
 }
 
 void nearestX_left(Point* list, int* position, int num) {
-	int i = 0; 
+	int i = 0;
 	int valid = 15 - num;
 	while (position[i] >= 0 && position[i] <= 15) {
 		if (position[i] == 0) {
@@ -269,14 +269,14 @@ void nearestX_left(Point* list, int* position, int num) {
 			}
 			else {
 				list[0].x = 0;
-			}			
+			}
 		}
-		else if (position[i] == 15) {	
-			if (valid >= 2) {				
+		else if (position[i] == 15) {
+			if (valid >= 2) {
 				int one = 0;
 				int two = 0;
 				findNearest_last_left(list, 15, one, two);
-				int liuliu = one - two;				
+				int liuliu = one - two;
 				if (liuliu < 0) {
 					list[15].x = one - abs(liuliu);
 				}
@@ -296,20 +296,20 @@ void nearestX_left(Point* list, int* position, int num) {
 			}
 		}
 		else {
-			if (valid >= 2) {					
+			if (valid >= 2) {
 				int one = 0;
 				int two = 0;
 				int count = 0;
 				findNearest_middle_left(list, position[i], one, two, count);
-				int liuliu = abs(one - two)/(count+1);				
+				int liuliu = abs(one - two) / (count + 1);
 				if (one < two) {
 					for (int k = 0; k < count; k++) {
-						list[position[i + k]].x = one + (k+1)*liuliu;
+						list[position[i + k]].x = one + (k + 1)*liuliu;
 					}
 				}
 				else if (one > two) {
 					for (int k = 0; k < count; k++) {
-						list[position[i+k]].x = one - (k + 1)*liuliu;
+						list[position[i + k]].x = one - (k + 1)*liuliu;
 					}
 				}
 				else {
@@ -330,7 +330,7 @@ void nearestX_left(Point* list, int* position, int num) {
 			}
 			else {
 				list[0].x = 0;
-			}			
+			}
 		}
 		i++;
 	}
@@ -342,7 +342,7 @@ void nearestX_right(Point* list, int* position, int num, int max) {
 	int valid = 15 - num;
 	while (position[i] >= 0 && position[i] <= 15) {
 		if (position[i] == 0) {
-			if (valid >= 2) {				
+			if (valid >= 2) {
 				int one = 0;
 				int two = 0;
 				findNearest_first_right(list, 0, one, two);
@@ -492,7 +492,7 @@ void slidingWindow(Mat src, Mat &tracking) {
 				rmeet = 0;
 			}
 		}
-	}	
+	}
 	int position_left[16];
 	int position_right[16];
 	int left_pos = 0;
@@ -503,8 +503,8 @@ void slidingWindow(Mat src, Mat &tracking) {
 	int bef_r = 0;
 	int aft_r = 0;
 	int flag_r = 0;
-	for (int i = 0; i < 16; i++) {		
-		if (points_left[i].x > 0) {						
+	for (int i = 0; i < 16; i++) {
+		if (points_left[i].x > 0) {
 			if (flag_l > 0) {
 				aft_l = points_left[i].x;
 				if (bef_l - aft_l > 10) {
@@ -523,10 +523,10 @@ void slidingWindow(Mat src, Mat &tracking) {
 		position_left[left_pos] = 15;
 		left_pos++;
 	}
-	for (int i = 0; i < 15; i++) {	
+	for (int i = 0; i < 15; i++) {
 		if (points_left[i].x == 0) {
 			position_left[left_pos] = i;
-			left_pos++;					
+			left_pos++;
 		}
 	}
 
@@ -540,7 +540,7 @@ void slidingWindow(Mat src, Mat &tracking) {
 		if (points_right[i].x < tracking.size().width) {
 			if (flag_r > 0) {
 				aft_r = points_right[i].x;
-				if (bef_r - aft_r > 10) {					
+				if (bef_r - aft_r > 10) {
 					points_right[i].x = bef_r - 5;
 				}
 				else if (bef_r - aft_r < -10) {
@@ -569,7 +569,6 @@ void slidingWindow(Mat src, Mat &tracking) {
 		circle(tracking, points_right[i], 4, Scalar(0, 255, 0), 4);
 	}
 }
-
 /*
 Mat LaneInShadow(Mat img) {
 Mat imgShadow;
@@ -623,7 +622,7 @@ Mat detectLane(Mat img) {
     stop = high_resolution_clock::now();
     duration = duration_cast<microseconds>(stop - start);
     cout<< "Sliding window time elapse "<< duration.count()<<endl;
-	//imshow("Tracking", tracking);
+	imshow("Tracking", tracking);
 	return imgThresholded;
 }
 
@@ -646,7 +645,9 @@ void imageCallback(const sensor_msgs::ImageConstPtr& msg)
     try
     {
         cv_ptr = cv_bridge::toCvCopy(msg, sensor_msgs::image_encodings::BGR8);
-        cout << "===================== Frame "<<frame_num<<"======================"<<endl;
+       // imwrite("/home/fallinlove/catkin_ws/image/t" + to_string(frame_num) + ".jpg", cv_ptr->image);
+        
+        //cout << "===================== Frame "<<frame_num<<"======================"<<endl;
         auto start_app = high_resolution_clock::now();
         detectLane(cv_ptr->image);
         auto stop_app = high_resolution_clock::now();
